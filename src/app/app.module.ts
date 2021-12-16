@@ -10,9 +10,13 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatMenuModule } from '@angular/material/menu';
 import { HomeComponent } from './components/home/home.component';
 import { AppRouting } from './app-routing.module';
-import {MatListModule} from '@angular/material/list';
-import {HeaderComponent} from './components/header/header.component';
-import {SidenavComponent} from './components/sidenav/sidenav.component';
+import { MatListModule } from '@angular/material/list';
+import { HeaderComponent } from './components/header/header.component';
+import { SidenavComponent } from './components/sidenav/sidenav.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {MatSelectModule} from '@angular/material/select';
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
   declarations: [
@@ -31,6 +35,11 @@ import {SidenavComponent} from './components/sidenav/sidenav.component';
     MatDividerModule,
     MatMenuModule,
     MatListModule,
+    MatFormFieldModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatSelectModule,
+    MatInputModule,
     AppRouting
   ],
   providers: [],

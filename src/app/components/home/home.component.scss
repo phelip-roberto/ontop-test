@@ -1,0 +1,28 @@
+.main-grid {
+  min-width: 80vw;
+}
+
+.search-filter {
+  mat-form-field {
+    min-width: 10rem;
+  }
+}
+
+@media screen and (min-width: 955px) {
+  .main-grid {
+    width: 50vw;
+    min-width: 50vw;
+  }
+
+  
+  .search-filter {
+    mat-form-field {
+      min-width: 40rem;
+    }
+  }
+}
+
+.mat-option {
+  border: 1px solid black;
+  background: #C4C4C4;
+}

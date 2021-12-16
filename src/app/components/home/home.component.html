@@ -1,1 +1,68 @@
-<p>home works!</p>
+<div class="main-grid">
+  <div>
+    <h1>Contracts for {{Client}}</h1>
+    <form autocomplete="off" [formGroup]="filterForm" (submit)="confirm()">
+      <div fxLayout="row wrap" fxLayoutGap="32px" fxLayoutAlign="flex-start">
+        <div class="search-filter">
+          <mat-form-field appearance="outline">
+            <input matInput formControlName="search" placeholder="Search">
+          </mat-form-field>
+        </div>
+        <div>
+          <button>
+            <i class="fa fa-filter" aria-hidden="true"></i> Filter
+          </button>
+          <button>
+            <i class="fa fa-plus" aria-hidden="true"></i> New hire
+          </button>
+        </div>
+      </div>
+      <div fxLayout="row wrap" fxLayoutGap="32px" fxLayoutAlign="flex-start">
+        <div>
+          <mat-form-field appearance="outline">
+            <mat-label>Promo Search</mat-label>
+            <mat-select formControlName="contractType" multiple>
+              <mat-option
+                *ngFor="let contractType of contractTypeList"
+                [value]="contractType.code ">
+                {{contractType.label}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field appearance="outline">
+            <input matInput formControlName="contractorName" placeholder="Search">
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field appearance="outline">
+            <mat-label>Promo Search</mat-label>
+            <mat-select formControlName="status" multiple>
+              <mat-option
+                *ngFor="let status of statusList"
+                [value]="status.code ">
+                {{status.label}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <!-- <mat-form-field appearance="outline">
+            <mat-label>Promo Search</mat-label>
+            <mat-select panelClass="panel">
+              <mat-option *ngFor="let status of statusList" [value]="status.code">
+                {{status.label}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field> -->
+        </div>
+      </div>
+
+    </form>
+        
+    <div>
+      <div fxLayout="row wrap" fxLayoutGap="32px" fxLayoutAlign="flex-start">
+        <p>table</p>
+      </div>
+    </div>
+  </div>
+</div>
