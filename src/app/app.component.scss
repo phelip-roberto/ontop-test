@@ -8,16 +8,18 @@ mat-sidenav {
  
 main {
     padding: 10px;
+    min-height: 80%;
+    background-color: #F9F9F9;
 }
 
-a {
-    text-decoration: none;
-    color: black;
-}
+// a {
+//     text-decoration: none;
+//     color: black;
+// }
  
-a:hover, a:active{
-    color: lightgray;
-}
+// a:hover, a:active{
+//     color: lightgray;
+// }
  
 .navigation-items{
     list-style-type: none;

@@ -1,20 +1,33 @@
 <mat-toolbar  color="primary">
-    <div fxHide.gt-xs>
-        <button mat-icon-button (click)="onToggleSidenav()">
-            <mat-icon>menu</mat-icon>
-        </button>
-    </div>
-    <div>
-        <a routerLink="/home">Owner-Account</a>
-    </div>
-    <div fxFlex fxLayout fxLayoutAlign="end" fxHide.xs>
-        <ul fxLayout fxLayoutGap="15px" class="navigation-items">
-            <li>
-                <a routerLink="/owner">Owner Actions</a>
-            </li>
-            <li>
-                <a routerLink="/account">Account Actions</a>
-            </li>
-        </ul>
+    <div class="header">
+        <div fxHide.gt-xs>
+            <button mat-icon-button (click)="onToggleSidenav()">
+                <img src="assets/menu.svg" alt="Menu" class="menu">
+            </button>
+        </div>
+        <div>
+            <img src="assets/logo.png" alt="Logo" class="logo">
+        </div>
+        <div fxFlex fxLayout fxHide.xs class="navigation">
+            <ul fxLayout fxLayoutGap="100px" class="navigation-items">
+                <li>
+                    <a routerLink="/owner"><i class="fa fa-user-o"></i>Contracts<i class="fa fa-chevron-down"></i></a>
+                </li>
+                <li>
+                    <a routerLink="/account"><i class="fa fa-file-text-o"></i>Documents<i class="fa fa-chevron-down"></i></a>
+                </li>
+                <li>
+                    <a routerLink="/account"><i class="fa fa-credit-card"></i>Payout<i class="fa fa-chevron-down"></i></a>
+                </li>
+                <li>
+                    <a routerLink="/account"><i class="fa fa-calendar-minus-o"></i>Time<i class="fa fa-chevron-down"></i></a>
+                </li>
+            </ul>
+        </div>
+        <div fxHide.xs class="user-img-div">
+            <div class="verticalLine"></div>
+            <img src="assets/user-img.png" alt="Logo" class="user-img">
+            <i class="fa fa-chevron-down"></i>
+        </div>
     </div>
 </mat-toolbar>
