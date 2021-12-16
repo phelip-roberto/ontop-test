@@ -1,6 +1,11 @@
 mat-sidenav-container, mat-sidenav-content, mat-sidenav {
     height: 100%;
 }
+
+mat-sidenav-container {
+    position: absolute;
+    width: -webkit-fill-available;
+}
  
 mat-sidenav {
     width: 250px;
@@ -39,7 +44,13 @@ mat-toolbar{
 
 .layout-wrapper{ 
     height: 100%; 
-} 
+}
+ 
 .flex-wrapper{ 
     height: 100%; 
+}
+
+.navigation {
+    background: hsl(0 0% 0% / 0.5);
+    backdrop-filter: blur(1rem);
 }

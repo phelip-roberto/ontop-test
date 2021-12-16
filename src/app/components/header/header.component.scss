@@ -13,6 +13,7 @@ a:hover, a:active{
     list-style-type: none;
     padding: 0;
     margin: 0;
+    gap: 10rem;
 
     i {
         margin: 0 10px;
@@ -66,4 +67,23 @@ mat-toolbar{
     i {
         margin: 0 2px;
     }
+}
+
+@media screen and (max-width: 1444px) {
+    .logo {
+        margin-left: 2rem;
+    }
+
+    .navigation-items {
+        gap: 2rem;
+    }
+
+    .user-img-div {
+        padding-right: 2rem;
+
+        .verticalLine {
+            padding-right: 1.5rem;
+        }
+    }
+    
 }

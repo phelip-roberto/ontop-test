@@ -1,15 +1,15 @@
 <mat-toolbar  color="primary">
     <div class="header">
-        <div fxHide.gt-xs>
+        <div>
+            <img src="assets/logo.png" alt="Logo" class="logo">
+        </div>
+        <div fxHide.gt-md>
             <button mat-icon-button (click)="onToggleSidenav()">
                 <img src="assets/menu.svg" alt="Menu" class="menu">
             </button>
         </div>
-        <div>
-            <img src="assets/logo.png" alt="Logo" class="logo">
-        </div>
-        <div fxFlex fxLayout fxHide.xs class="navigation">
-            <ul fxLayout fxLayoutGap="100px" class="navigation-items">
+        <div fxFlex fxLayout fxShow fxHide.lt-md class="navigation">
+            <ul fxLayout class="navigation-items">
                 <li>
                     <a routerLink="/owner"><i class="fa fa-user-o"></i>Contracts<i class="fa fa-chevron-down"></i></a>
                 </li>
@@ -24,7 +24,7 @@
                 </li>
             </ul>
         </div>
-        <div fxHide.xs class="user-img-div">
+        <div fxShow fxHide.lt-md class="user-img-div">
             <div class="verticalLine"></div>
             <img src="assets/user-img.png" alt="Logo" class="user-img">
             <i class="fa fa-chevron-down"></i>

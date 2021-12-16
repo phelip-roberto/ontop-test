@@ -16,5 +16,9 @@ export class SidenavComponent implements OnInit {
   public onSidenavClose = () => {
     this.sidenavClose.emit();
   }
+
+  public onToggleSidenav = () => {
+    this.sidenavClose.emit();
+  }
  
 }
