@@ -17,6 +17,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatSelectModule} from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
+import { MatTableModule } from '@angular/material/table';
+import {MatChipsModule} from '@angular/material/chips';
 
 @NgModule({
   declarations: [
@@ -40,6 +42,8 @@ import { MatInputModule } from '@angular/material/input';
     ReactiveFormsModule,
     MatSelectModule,
     MatInputModule,
+    MatTableModule,
+    MatChipsModule,
     AppRouting
   ],
   providers: [],

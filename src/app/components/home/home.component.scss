@@ -1,10 +1,18 @@
 .main-grid {
   min-width: 80vw;
+
+  div {
+    span {
+      display: flex;
+      justify-content: center;
+    }
+  }
 }
 
 .search-filter {
   mat-form-field {
     min-width: 10rem;
+    height: 58px;
   }
 }
 
@@ -17,7 +25,7 @@
   
   .search-filter {
     mat-form-field {
-      min-width: 40rem;
+      min-width: 24rem;
     }
   }
 }
@@ -25,4 +33,62 @@
 .mat-option {
   border: 1px solid black;
   background: #C4C4C4;
+}
+
+.btn-filter {
+  background: #EBEBEB;
+  border-radius: 5px;
+  height: 58px;
+  width: 111px;
+  font-size: 16px;
+  border: none;
+  margin-top: 3px;
+}
+
+.btn-hire {
+  background: #FF5A70;
+  border-radius: 5px;
+  height: 58px;
+  width: 192px;
+  font-size: 18px;
+  border: none;
+  margin-top: 3px;
+}
+
+form {
+  div {
+    margin-top: 10px;
+  }
+}
+
+table {
+  width: 100%;
+}
+
+.first-row {
+  width: 100%;
+}
+
+.bg-red {
+  color: red;
+}
+
+.mat-cell:last-of-type, .mat-header-cell:last-of-type {
+  padding-right: 0px;
+}
+
+.mat-menu-item {
+  i {
+    margin: 0 10px;
+  }
+}
+
+.mat-chip.mat-standard-chip.mat-chip-selected.mat-primary {
+  &.active {
+   background-color: #13CE66 !important;
+  }
+
+  &.pending {
+   background-color: #f1d400 !important;
+  }
 }

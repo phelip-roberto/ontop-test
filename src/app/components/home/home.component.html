@@ -1,18 +1,18 @@
 <div class="main-grid">
   <div>
-    <h1>Contracts for {{Client}}</h1>
+    <span><h1>Contracts for {{Client}}</h1></span>
     <form autocomplete="off" [formGroup]="filterForm" (submit)="confirm()">
-      <div fxLayout="row wrap" fxLayoutGap="32px" fxLayoutAlign="flex-start">
+      <div fxLayout="row wrap" class="first-row" fxLayoutGap="10px">
         <div class="search-filter">
           <mat-form-field appearance="outline">
             <input matInput formControlName="search" placeholder="Search">
           </mat-form-field>
         </div>
-        <div>
-          <button>
-            <i class="fa fa-filter" aria-hidden="true"></i> Filter
+        <div fxLayout="row wrap" fxLayoutGap="5px" fxLayoutAlign="center">
+          <button class="btn-filter">
+            <i class="fa fa-sliders" aria-hidden="true"></i> Filter
           </button>
-          <button>
+          <button class="btn-hire">
             <i class="fa fa-plus" aria-hidden="true"></i> New hire
           </button>
         </div>
@@ -46,22 +46,64 @@
               </mat-option>
             </mat-select>
           </mat-form-field>
-          <!-- <mat-form-field appearance="outline">
-            <mat-label>Promo Search</mat-label>
-            <mat-select panelClass="panel">
-              <mat-option *ngFor="let status of statusList" [value]="status.code">
-                {{status.label}}
-              </mat-option>
-            </mat-select>
-          </mat-form-field> -->
         </div>
       </div>
 
     </form>
         
     <div>
-      <div fxLayout="row wrap" fxLayoutGap="32px" fxLayoutAlign="flex-start">
-        <p>table</p>
+      <div>
+        <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+          <!-- Position Column -->
+          <ng-container matColumnDef="name">
+            <mat-header-cell *matHeaderCellDef> Contractor name </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+          </ng-container>
+        
+          <!-- Name Column -->
+          <ng-container matColumnDef="type">
+            <mat-header-cell *matHeaderCellDef> Type </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.contractType}} </mat-cell>
+          </ng-container>
+        
+          <!-- Weight Column -->
+          <ng-container matColumnDef="startDate">
+            <mat-header-cell *matHeaderCellDef> Start date </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.startDate}} </mat-cell>
+          </ng-container>
+        
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="amount">
+            <mat-header-cell *matHeaderCellDef> Amount </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.amount}} </mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="status">
+            <mat-header-cell *matHeaderCellDef> Status </mat-header-cell>
+            <mat-cell *matCellDef="let element">
+              <mat-chip-list aria-label="Rate Status">
+                <mat-chip [ngClass]="{'active': element.status === 'Active', 'pending': element.status !== 'Active'}" selected>{{element.status}}</mat-chip>
+              </mat-chip-list>
+            </mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="menu" stickyEnd>
+            <mat-header-cell *matHeaderCellDef>Menu</mat-header-cell>
+      
+            <mat-cell mat-cell *matCellDef="let dataInstance">
+              <mat-icon (menuOpened)="isOpen = !isOpen" (menuClosed)="isOpen = !isOpen" [mat-menu-trigger-for]="menu">more_vert</mat-icon>
+              <mat-menu #menu="matMenu">
+                <button mat-menu-item><i class="fa fa-pencil-square-o"></i>Edit</button>
+                <button mat-menu-item><i class="fa fa-text-width"></i>Sign</button>
+                <button mat-menu-item><i class="fa fa-file-text-o"></i>View summary</button>
+                <button mat-menu-item><i class="fa fa-trash-o bg-red"></i>Delete</button>
+              </mat-menu>
+            </mat-cell>
+          </ng-container>
+
+          <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+          <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+        </mat-table>
       </div>
     </div>
   </div>
